@@ -2,9 +2,8 @@ from django.utils import timezone
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
 from rest_framework.relations import SlugRelatedField
-
+from reviews.models import Category, Comment, Genre, Review, Title
 from users.models import User
-from reviews.models import Title, Category, Genre, Review, Comment
 
 
 class GenreSerializer(serializers.ModelSerializer):

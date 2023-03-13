@@ -1,5 +1,5 @@
-from rest_framework.exceptions import PermissionDenied
 from rest_framework import permissions
+from rest_framework.exceptions import PermissionDenied
 
 
 class IsAdminOrSuperuserOnly(permissions.BasePermission):
@@ -30,8 +30,7 @@ class IsAdminOrReadOnly(permissions.BasePermission):
         if request.method in permissions.SAFE_METHODS:
             return True
 
-        elif request.user and request.user.is_authenticated:
+        if request.user and request.user.is_authenticated:
             if request.user.is_admin:
                 return True
-            else:
-                raise PermissionDenied(request.method)
+        raise PermissionDenied(request.method)
