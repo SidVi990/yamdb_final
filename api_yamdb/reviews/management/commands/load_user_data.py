@@ -1,6 +1,6 @@
-from django.core.management import BaseCommand
 from csv import DictReader
 
+from django.core.management import BaseCommand
 from users.models import User
 
 ALREADY_LOADED_ERROR_MESSAGE = """

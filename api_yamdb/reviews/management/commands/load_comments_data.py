@@ -1,6 +1,6 @@
-from django.core.management import BaseCommand
 from csv import DictReader
 
+from django.core.management import BaseCommand
 from reviews.models import Comment, Review
 from users.models import User
 
